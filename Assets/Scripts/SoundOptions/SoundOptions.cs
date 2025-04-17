@@ -3,15 +3,16 @@ using UnityEngine.Audio;
 
 public class SoundOptions : MonoBehaviour
 {
-    [SerializeField] private AudioMixer _mixer;
-
-    private const float MinVolumeDb = -80f;
-    private const float DbConversion = 20f;
+    private const float MinVolumeDecibels = -80f;
+    private const float DecibelsConversion = 20f;
     private const float LinearBase = 10f;
-    private const string SliderSaveSuffix = "Volume";
-    private const string ToggleSaveSuffix = "Enabled";
 
-    public void ToggleVolume(string exposedName, bool isEnabled)
+    public const string SliderSaveSuffix = "Volume";
+    public const string ToggleSaveSuffix = "Enabled";
+
+    [SerializeField] private AudioMixerGroup _mixer;
+
+    public void SwitchVolume(string exposedName, bool isEnabled)
     {
         if (isEnabled)
         {
@@ -22,7 +23,7 @@ public class SoundOptions : MonoBehaviour
         {
             float currentVolume = GetLinearVolume(exposedName);
             PlayerPrefs.SetFloat(exposedName + SliderSaveSuffix, currentVolume);
-            _mixer.SetFloat(exposedName, MinVolumeDb);
+            _mixer.audioMixer.SetFloat(exposedName, MinVolumeDecibels);
         }
 
         PlayerPrefs.SetInt(exposedName + ToggleSaveSuffix, isEnabled ? 1 : 0);
@@ -30,8 +31,8 @@ public class SoundOptions : MonoBehaviour
 
     public void ChangeVolume(string exposedName, float volume)
     {
-        float dbValue = Mathf.Log10(volume) * DbConversion;
-        _mixer.SetFloat(exposedName, dbValue);
+        float decibelsValue = Mathf.Log10(volume) * DecibelsConversion;
+        _mixer.audioMixer.SetFloat(exposedName, decibelsValue);
 
         if (PlayerPrefs.GetInt(exposedName + ToggleSaveSuffix, 1) == 1)
         {
@@ -41,18 +42,10 @@ public class SoundOptions : MonoBehaviour
 
     public float GetLinearVolume(string parameterName)
     {
-        if (_mixer.GetFloat(parameterName, out float dbValue))
-            return DbToLinear(dbValue);
+        if (_mixer.audioMixer.GetFloat(parameterName, out float decibelsValue))
+            return ConvertDecibelsToLinear(decibelsValue);
         else
             return 0f;
-    }
-
-    private float DbToLinear(float db)
-    {
-        if (db <= MinVolumeDb)
-            return 0f;
-        else
-            return Mathf.Pow(LinearBase, db / DbConversion);
     }
 
     public void LoadSettings(string exposedName)
@@ -66,7 +59,15 @@ public class SoundOptions : MonoBehaviour
         }
         else
         {
-            _mixer.SetFloat(exposedName, MinVolumeDb);
+            _mixer.audioMixer.SetFloat(exposedName, MinVolumeDecibels);
         }
+    }
+
+    private float ConvertDecibelsToLinear(float decibels)
+    {
+        if (decibels <= MinVolumeDecibels)
+            return 0f;
+        else
+            return Mathf.Pow(LinearBase, decibels / DecibelsConversion);
     }
 }

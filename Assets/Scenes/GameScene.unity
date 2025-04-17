@@ -585,8 +585,6 @@ GameObject:
   m_Component:
   - component: {fileID: 187315309}
   - component: {fileID: 187315310}
-  - component: {fileID: 187315312}
-  - component: {fileID: 187315311}
   m_Layer: 5
   m_Name: EffectVolumeSlider
   m_TagString: Untagged
@@ -609,7 +607,7 @@ RectTransform:
   - {fileID: 565325538}
   - {fileID: 1580088260}
   - {fileID: 437650568}
-  m_Father: {fileID: 1775059027}
+  m_Father: {fileID: 699477223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -667,33 +665,73 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &187315311
+--- !u!1 &246322723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246322724}
+  - component: {fileID: 246322726}
+  - component: {fileID: 246322725}
+  m_Layer: 5
+  m_Name: MusicGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &246322724
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246322723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 795508778}
+  - {fileID: 571328673}
+  m_Father: {fileID: 1775059027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &246322725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187315308}
+  m_GameObject: {fileID: 246322723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acee0deeecd210849b42fd8e329d1377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 795508779}
+  _toggle: {fileID: 571328674}
+  _mixerGroup: {fileID: -7734640222605244431, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
+--- !u!114 &246322726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246322723}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mixer: {fileID: 24100000, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
---- !u!114 &187315312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187315308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f11d6449a95664a9fc8c86d61e3496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 187315310}
-  _mixerGroup: {fileID: -8843933508513885904, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
+  _mixer: {fileID: -7734640222605244431, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &361965828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,8 +1233,6 @@ GameObject:
   m_Component:
   - component: {fileID: 571328673}
   - component: {fileID: 571328674}
-  - component: {fileID: 571328676}
-  - component: {fileID: 571328675}
   m_Layer: 5
   m_Name: MusicVolumeToggle
   m_TagString: Untagged
@@ -1218,7 +1254,7 @@ RectTransform:
   m_Children:
   - {fileID: 557961995}
   - {fileID: 555724654}
-  m_Father: {fileID: 1775059027}
+  m_Father: {fileID: 246322724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1273,33 +1309,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
---- !u!114 &571328675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571328672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mixer: {fileID: 24100000, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
---- !u!114 &571328676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 571328672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4125707f46f6bf14f8140cfc0e346454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toggle: {fileID: 571328674}
-  _mixerGroup: {fileID: -7734640222605244431, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &572436132
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1649,73 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &699477222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699477223}
+  - component: {fileID: 699477225}
+  - component: {fileID: 699477224}
+  m_Layer: 5
+  m_Name: EffectsGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &699477223
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699477222}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 187315309}
+  - {fileID: 1038356145}
+  m_Father: {fileID: 1775059027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &699477224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699477222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acee0deeecd210849b42fd8e329d1377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 187315310}
+  _toggle: {fileID: 1038356146}
+  _mixerGroup: {fileID: -8843933508513885904, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
+--- !u!114 &699477225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699477222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: -8843933508513885904, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,8 +1820,6 @@ GameObject:
   m_Component:
   - component: {fileID: 716136787}
   - component: {fileID: 716136788}
-  - component: {fileID: 716136789}
-  - component: {fileID: 716136790}
   m_Layer: 5
   m_Name: MasterVolumeToggle
   m_TagString: Untagged
@@ -1767,7 +1841,7 @@ RectTransform:
   m_Children:
   - {fileID: 1221521382}
   - {fileID: 2096552518}
-  m_Father: {fileID: 1775059027}
+  m_Father: {fileID: 1493522630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1822,33 +1896,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
---- !u!114 &716136789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716136786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4125707f46f6bf14f8140cfc0e346454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toggle: {fileID: 716136788}
-  _mixerGroup: {fileID: 24300002, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
---- !u!114 &716136790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716136786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mixer: {fileID: 24100000, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &766425697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1927,8 +1974,6 @@ GameObject:
   m_Component:
   - component: {fileID: 795508778}
   - component: {fileID: 795508779}
-  - component: {fileID: 795508781}
-  - component: {fileID: 795508780}
   m_Layer: 5
   m_Name: MusicVolumeSlider
   m_TagString: Untagged
@@ -1951,7 +1996,7 @@ RectTransform:
   - {fileID: 633786001}
   - {fileID: 1224716558}
   - {fileID: 646288510}
-  m_Father: {fileID: 1775059027}
+  m_Father: {fileID: 246322724}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2009,33 +2054,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &795508780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795508777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mixer: {fileID: 24100000, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
---- !u!114 &795508781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795508777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f11d6449a95664a9fc8c86d61e3496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 795508779}
-  _mixerGroup: {fileID: -7734640222605244431, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &855662517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,8 +2192,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1038356145}
   - component: {fileID: 1038356146}
-  - component: {fileID: 1038356148}
-  - component: {fileID: 1038356147}
   m_Layer: 5
   m_Name: EffectVolumeToggle
   m_TagString: Untagged
@@ -2197,7 +2213,7 @@ RectTransform:
   m_Children:
   - {fileID: 1902149877}
   - {fileID: 2117435212}
-  m_Father: {fileID: 1775059027}
+  m_Father: {fileID: 699477223}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2252,33 +2268,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
---- !u!114 &1038356147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038356144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mixer: {fileID: 24100000, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
---- !u!114 &1038356148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038356144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4125707f46f6bf14f8140cfc0e346454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _toggle: {fileID: 1038356146}
-  _mixerGroup: {fileID: -8843933508513885904, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &1124754184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,6 +2759,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346479523}
   m_CullTransparentMesh: 1
+--- !u!1 &1493522629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493522630}
+  - component: {fileID: 1493522632}
+  - component: {fileID: 1493522631}
+  m_Layer: 5
+  m_Name: MasterGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1493522630
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493522629}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1640271405}
+  - {fileID: 716136787}
+  m_Father: {fileID: 1775059027}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1493522631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493522629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acee0deeecd210849b42fd8e329d1377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 1640271406}
+  _toggle: {fileID: 716136788}
+  _mixerGroup: {fileID: 24300002, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
+--- !u!114 &1493522632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493522629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixer: {fileID: 24300002, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &1580088259
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,8 +3125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1640271405}
   - component: {fileID: 1640271406}
-  - component: {fileID: 1640271408}
-  - component: {fileID: 1640271407}
   m_Layer: 5
   m_Name: MasterVolumeSlider
   m_TagString: Untagged
@@ -3093,7 +3147,7 @@ RectTransform:
   - {fileID: 1857128652}
   - {fileID: 855662518}
   - {fileID: 141615441}
-  m_Father: {fileID: 1775059027}
+  m_Father: {fileID: 1493522630}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3151,33 +3205,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1640271407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640271404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013cc0d2b9adbf14db7502bf5abc9794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mixer: {fileID: 24100000, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
---- !u!114 &1640271408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640271404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93f11d6449a95664a9fc8c86d61e3496, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 1640271406}
-  _mixerGroup: {fileID: 24300002, guid: 18ce2e53d2cf0674e9d6c74e4b8e5e92, type: 2}
 --- !u!1 &1659613743
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,12 +3406,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 69624540}
-  - {fileID: 1640271405}
-  - {fileID: 716136787}
-  - {fileID: 187315309}
-  - {fileID: 1038356145}
-  - {fileID: 795508778}
-  - {fileID: 571328673}
+  - {fileID: 1493522630}
+  - {fileID: 699477223}
+  - {fileID: 246322724}
   m_Father: {fileID: 1604510232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
